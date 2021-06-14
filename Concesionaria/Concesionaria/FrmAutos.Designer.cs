@@ -181,6 +181,8 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
+            this.txtImporteVenta = new System.Windows.Forms.MaskedTextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
@@ -205,10 +207,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Controls.Add(this.txtImporteVenta);
             this.groupBox1.Controls.Add(this.btnAgregarProvincia);
             this.groupBox1.Controls.Add(this.cmbProvincia);
             this.groupBox1.Controls.Add(this.label36);
-            this.groupBox1.Controls.Add(this.btnNuevaSucursal);
             this.groupBox1.Controls.Add(this.cmbSucursal);
             this.groupBox1.Controls.Add(this.label35);
             this.groupBox1.Controls.Add(this.btnNuevoTipoUtilitario);
@@ -285,7 +288,7 @@
             // btnNuevaSucursal
             // 
             this.btnNuevaSucursal.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevaSucursal.Location = new System.Drawing.Point(772, 196);
+            this.btnNuevaSucursal.Location = new System.Drawing.Point(779, 178);
             this.btnNuevaSucursal.Name = "btnNuevaSucursal";
             this.btnNuevaSucursal.Size = new System.Drawing.Size(40, 28);
             this.btnNuevaSucursal.TabIndex = 42;
@@ -296,15 +299,15 @@
             // 
             this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSucursal.FormattingEnabled = true;
-            this.cmbSucursal.Location = new System.Drawing.Point(507, 199);
+            this.cmbSucursal.Location = new System.Drawing.Point(684, 175);
             this.cmbSucursal.Name = "cmbSucursal";
-            this.cmbSucursal.Size = new System.Drawing.Size(259, 24);
+            this.cmbSucursal.Size = new System.Drawing.Size(111, 24);
             this.cmbSucursal.TabIndex = 43;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(422, 202);
+            this.label35.Location = new System.Drawing.Point(609, 175);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(69, 16);
             this.label35.TabIndex = 42;
@@ -344,7 +347,7 @@
             this.CmbTipoCombustible.FormattingEnabled = true;
             this.CmbTipoCombustible.Location = new System.Drawing.Point(506, 172);
             this.CmbTipoCombustible.Name = "CmbTipoCombustible";
-            this.CmbTipoCombustible.Size = new System.Drawing.Size(289, 24);
+            this.CmbTipoCombustible.Size = new System.Drawing.Size(97, 24);
             this.CmbTipoCombustible.TabIndex = 10;
             // 
             // label16
@@ -465,11 +468,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 172);
+            this.label15.Location = new System.Drawing.Point(23, 172);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 16);
+            this.label15.Size = new System.Drawing.Size(91, 16);
             this.label15.TabIndex = 15;
-            this.label15.Text = "Importe";
+            this.label15.Text = "Valor Compra";
             // 
             // txtCodAuto
             // 
@@ -1007,6 +1010,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.btnNuevaSucursal);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1755,6 +1759,23 @@
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
             // 
+            // txtImporteVenta
+            // 
+            this.txtImporteVenta.Location = new System.Drawing.Point(506, 203);
+            this.txtImporteVenta.Name = "txtImporteVenta";
+            this.txtImporteVenta.Size = new System.Drawing.Size(246, 22);
+            this.txtImporteVenta.TabIndex = 47;
+            this.txtImporteVenta.ValidatingType = typeof(int);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(418, 203);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(78, 16);
+            this.label45.TabIndex = 48;
+            this.label45.Text = "Valor Venta";
+            // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1973,5 +1994,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.DataGridView GrillaCliente;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.MaskedTextBox txtImporteVenta;
     }
 }

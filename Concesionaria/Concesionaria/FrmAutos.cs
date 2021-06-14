@@ -98,6 +98,7 @@ namespace Concesionaria
             string Observacion = "";
             string Anio = "";
             Double? Importe = 0;
+            Double? ImporteVenta = null;
             Int32 CodStock = -1;
             Int32 CodAuto = 0;
             string Motor = "";
@@ -135,6 +136,12 @@ namespace Concesionaria
             {
                 Clases.cFunciones fun = new Clases.cFunciones();
                 Importe = fun.ToDouble(txtImporte.Text);
+            }
+
+            if (txtImporteVenta.Text  != "")
+            {
+                Clases.cFunciones fun = new Clases.cFunciones();
+                ImporteVenta = fun.ToDouble(txtImporteVenta.Text);
             }
 
             Motor = txtMotor.Text;
@@ -180,7 +187,7 @@ namespace Concesionaria
                     CodCliente = Convert.ToInt32(txtCodCLiente.Text);
                 CodCliente = GetCodClienteGrilla();
                 Clases.cStockAuto stockAuto = new Clases.cStockAuto();
-                stockAuto.InsertarStockAutoTransaccion(con, Transaccion, CodAuto, Fecha.ToShortDateString(), CodCliente, Principal.CodUsuarioLogueado, Importe);
+                stockAuto.InsertarStockAutoTransaccion(con, Transaccion, CodAuto, Fecha.ToShortDateString(), CodCliente, Principal.CodUsuarioLogueado, Importe, ImporteVenta);
                 Clases.cCosto costo = new Clases.cCosto();
                 CodStock = stockAuto.GetMaxCodStockxAutoTransaccion(con, Transaccion, CodAuto);
                 txtCodStock.Text = CodStock.ToString();

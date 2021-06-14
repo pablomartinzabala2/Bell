@@ -113,10 +113,10 @@ namespace Concesionaria.Clases
             return cDb.ExecuteDataTable(sql);
         }
 
-        public void InsertarStockAutoTransaccion(SqlConnection con,SqlTransaction Transaccion, Int32 CodAuto, string Fecha, Int32? CodCliente, Int32 CodUsuario, Double? ImporteCompra)
+        public void InsertarStockAutoTransaccion(SqlConnection con,SqlTransaction Transaccion, Int32 CodAuto, string Fecha, Int32? CodCliente, Int32 CodUsuario, Double? ImporteCompra,Double? ImporteVenta)
         {
             string sql = "";
-            sql = "insert into StockAuto(CodAuto,FechaAlta,CodCliente,CodUsuario,ImporteCompra)";
+            sql = "insert into StockAuto(CodAuto,FechaAlta,CodCliente,CodUsuario,ImporteCompra,PrecioVenta)";
             sql = sql + " values(" + CodAuto.ToString();
             sql = sql + "," + "'" + Fecha + "'";
             if (CodCliente == null)
@@ -126,6 +126,10 @@ namespace Concesionaria.Clases
             sql = sql + "," + CodUsuario.ToString();
             if (ImporteCompra != null)
                 sql = sql + "," + ImporteCompra.ToString();
+            else
+                sql = sql + ",null";  
+            if (ImporteVenta != null)
+                sql = sql + "," + ImporteVenta.ToString();
             else
                 sql = sql + ",null";
             sql = sql + ")";
